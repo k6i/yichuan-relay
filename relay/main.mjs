@@ -45,7 +45,7 @@ const KIND_MODULES = Object.freeze({
 })
 
 export const UPLINK_KINDS = Object.freeze(new Set(['push', 'snapshot']))
-export const DOWNLINK_KINDS = Object.freeze(new Set(['fetch', 'export', 'doctor']))
+export const DOWNLINK_KINDS = Object.freeze(new Set(['fetch', 'export', 'doctor', 'download']))
 export const KNOWN_KINDS = Object.freeze(new Set([...UPLINK_KINDS, ...DOWNLINK_KINDS]))
 
 const TXN_RE = /^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$/
