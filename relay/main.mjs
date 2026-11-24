@@ -33,13 +33,15 @@ import * as fetchKind from './kinds/fetch.mjs'
 import * as snapshotKind from './kinds/snapshot.mjs'
 import * as exportKind from './kinds/export.mjs'
 import * as doctorKind from './kinds/doctor.mjs'
+import * as downloadKind from './kinds/download.mjs'
 
 const KIND_MODULES = Object.freeze({
   push: pushKind,
   fetch: fetchKind,
   snapshot: snapshotKind,
   export: exportKind,
-  doctor: doctorKind
+  doctor: doctorKind,
+  download: downloadKind
 })
 
 export const UPLINK_KINDS = Object.freeze(new Set(['push', 'snapshot']))
@@ -151,7 +153,7 @@ export function preflight(manifest) {
     if (manifest.od.out !== `out/${manifest.txn}.tar`) {
       return new RelayError('internal', 'task manifest od.out does not match the task id')
     }
-    if (manifest.kind !== 'doctor') {
+    if (manifest.kind !== 'doctor' && manifest.kind !== 'download') {
       const targetError = assertTarget(manifest)
       if (targetError) return targetError
     }

@@ -7,7 +7,7 @@
  */
 
 /** Version of this relay template. Bump when runner behaviour changes. */
-export const RELAY_VERSION = 1
+export const RELAY_VERSION = 2
 
 /** Highest manifest schema this relay understands (RELAY.md §3/§9). */
 export const MANIFEST_SCHEMA = 1
